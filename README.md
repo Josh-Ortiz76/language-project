@@ -20,10 +20,11 @@
     -We would need a Query file and a language file to identify the language and compare it with the query.
 
 "For Milestone 1, how will your main() be structured?"
-  -
+  - It will take a command line argument and compute the trigram frequency.
 
 "For Milestone 2, how will your main() be structured?"
-  -
+  -Takes the multiple files and based on the trigram frequency, determines What
+    language is closest in relation to it.
 
 "What libraries will you need?"
     -We will need:
