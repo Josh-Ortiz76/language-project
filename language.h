@@ -5,11 +5,6 @@
 #include <string>
 #include <vector>
 
-/*
-A class to represent DNA sequences, related to the FASTA format.
-A DNA object has two member fields: a header, which is a sequence of characters beginning with the `>` character,
-and a sequence, which is a sequence of characters containing only A, C, T, G, and N.
-*/
 
 class language{
 
@@ -22,24 +17,17 @@ public:
   language();
 
   /*
-  Constructor with separate arguments for header and sequence
-  If `sequence` contains invalid characters, throws a std::runtime_error
+  Constructor to take an arguement and turn it into trigrams. Returns the possible trigrams.
   */
 
-  language(std::string header, std::string sequence);
+  std::string trigram(std::string argv);
 
+  /*
+  Counts the frequency of a letter in the trigrams and returns the number.
+  */
 
+  int frequency(std::string tri);
 
-
-
-
-
-
-
-
-
-
-
-
+  std::string tri;
 
 }
