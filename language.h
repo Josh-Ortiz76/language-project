@@ -1,5 +1,5 @@
-#ifndef _frq_h
-#define _frq_h
+#ifndef _language_h
+#define _language_h
 
 #include <iostream>
 #include <string>
@@ -11,7 +11,7 @@ A DNA object has two member fields: a header, which is a sequence of characters 
 and a sequence, which is a sequence of characters containing only A, C, T, G, and N.
 */
 
-class FRQ{
+class language{
 
 public:
 
@@ -19,14 +19,14 @@ public:
 	Default constructor
 	*/
 
-  FRQ();
+  language();
 
   /*
   Constructor with separate arguments for header and sequence
   If `sequence` contains invalid characters, throws a std::runtime_error
   */
 
-  FRQ(std::string header, std::string sequence);
+  language(std::string header, std::string sequence);
 
 
 
