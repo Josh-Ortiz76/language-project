@@ -5,9 +5,7 @@
 #include "language.h"
 
 //Initializes the trigram variable.
-language::language(){
-  std::vector<std::string> tri;
-}
+language::language();
 
 std::string language::trigramHash(std::string text){
   std::vector<int> hash;
@@ -28,7 +26,7 @@ std::string language::trigramHash(std::string text){
   return hash;
 }
 
-int language::frequency(text){
+int language::frequency(std::vector hash){
   std::vector<int> freq;
   int count = 0;
   for (int i = 0; i < (int)hash.size(); i++){
