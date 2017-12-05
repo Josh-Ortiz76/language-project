@@ -11,6 +11,7 @@ int main(int argc, char *argv[]){
   language lang = language(argv[1]);
   std::vector<int> num = lang.trigramHash();
 
+  //Prints out the frequencies of the trigrams
   for (int i = 0; i < (int)num.size(); i++){
     std::cout << num[i];
     std::cout << " ";

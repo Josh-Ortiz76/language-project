@@ -1,3 +1,27 @@
+commit 93ce555497e0088b425478399313845776f5cd50
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 23:37:33 2017 -0500
+
+    Fixed language.cpp for mimir
+    
+    Corrected problems occuring in mimir
+
+commit 426ff0e3595d16a513e9dcc1cefefd8f14113aea
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 22:21:36 2017 -0500
+
+    Moved the actually working files
+    
+    Moved the actually files from my local directory to the git repository
+
+commit 0b56fdadb90b49cc402003d1b385508ce082e802
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 22:19:16 2017 -0500
+
+    Update all files and created Compile script
+    
+    Finalized the language header, language.cpp and main.cpp. As well tested all the files.
+
 commit c122d35058c7a2216acc7d6657402fb64805d499
 Author: Tim Zhou <gmtimothy1213@gmail.com>
 Date:   Mon Dec 4 19:45:58 2017 -0500
