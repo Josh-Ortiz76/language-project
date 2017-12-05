@@ -16,11 +16,9 @@ public:
 
   language();
 
-  /*
-  Constructor to take an arguement and turn it into trigrams. Returns the possible trigrams.
-  */
+  language(std::string str);
 
-  std::string trigramHash(std::string text);
+  std::vector<int> trigramHash();
 
   /*
   Counts the frequency of a the trigram in the trigrams and returns the number.

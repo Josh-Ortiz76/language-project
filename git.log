@@ -1,3 +1,67 @@
+commit c122d35058c7a2216acc7d6657402fb64805d499
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 19:45:58 2017 -0500
+
+    Update Language class files & main.cpp
+    
+    Updated language.cpp and language.h, as well as started the main file.
+
+commit c02c80755ce99a36da241eba3c82a6c0dd47479a
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 19:00:46 2017 -0500
+
+    Updated language class files
+    
+    Updated language class files for clarity
+
+commit ccbd5e564bcbae6a302e13ca4c55593555d60490
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 18:44:17 2017 -0500
+
+    Update language class & added main.cpp
+    
+    Updated functions for the language class and created the main.cpp file
+
+commit 08a11d7e9a4c02b86aaf160f5364c53c0be61224
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 15:13:47 2017 -0500
+
+    Updated language header & created cpp file for language class
+    
+    Renamed frequencies.cpp to language.cpp to better fit the assignment protocol. Updated language header. Created functions for language.cpp.
+
+commit 5b895f27d0ec12a5e5b6e095c8f8568a2bbf0093
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 14:28:31 2017 -0500
+
+    Update header
+    
+    Header file was updated.
+
+commit e016ae26eb542e6c6040ce41c8c0fc5061c2afca
+Author: Tim Zhou <gmtimothy1213@gmail.com>
+Date:   Mon Dec 4 14:04:45 2017 -0500
+
+    Renamed header
+    
+    Renamed header to a more appropriate name
+
+commit c0eeacc746543f92f9e5b29bb9f75e43d397afa4
+Author: Unknown <joshua_ortiz@my.uri.edu>
+Date:   Sat Dec 2 20:25:15 2017 -0500
+
+    Header
+    
+    created header file
+
+commit 50ba8231072d450a3ebf2b65fec2986e6a6e4920
+Author: Unknown <joshua_ortiz@my.uri.edu>
+Date:   Sat Dec 2 19:04:37 2017 -0500
+
+    Started on frequencies.cpp
+    
+    uploaded file to gitkraken and began work on frequencies.cpp
+
 commit 19cf4d8ea49d86eaac69daa17e0917f8cce8d2a0
 Author: Josh-Ortiz76 <joshua_ortiz76@my.uri.edu>
 Date:   Mon Nov 20 15:25:25 2017 -0500

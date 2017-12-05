@@ -8,13 +8,12 @@ int main(int argc, char *argv[]){
   if (argc != 2){
     exit(EXIT_FAILURE);
   }
-  std::vector num = language::trigramHash(argv[1]);
-  std::vector freq = language::frequency(num);
+  language lang = language(argv[1]);
+  std::vector<int> num = lang.trigramHash();
 
-  for (i = 0; i < (int)num.size(); i++){
+  for (int i = 0; i < (int)num.size(); i++){
     std::cout << num[i];
-    std::cout << "";
-    std::cout << freq[i];
+    std::cout << " ";
   }
-  std::cout << endl;
+  std::cout << std::endl;
 }
