@@ -12,6 +12,9 @@ int main(int argc, char *argv[]){
   std::vector freq = language::frequency(num);
 
   for (i = 0; i < (int)num.size(); i++){
-    std::cout << num[i] << freq[i];
+    std::cout << num[i];
+    std::cout << "";
+    std::cout << freq[i];
   }
+  std::cout << endl;
 }
