@@ -5,7 +5,7 @@
 #include "language.h"
 
 int main(int argc, char *argv[]){
-  if (argc != 2){
+  if (argc < 2){
     exit(EXIT_FAILURE);
   }
   language lang = language(argv[1]);
@@ -17,4 +17,11 @@ int main(int argc, char *argv[]){
     std::cout << " ";
   }
   std::cout << std::endl;
+
+  std::string closest = "";
+  double largest = 0;
+
+  for (int j = 1; j < argc - 1; j++){
+    
+  }
 }

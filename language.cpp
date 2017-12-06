@@ -52,3 +52,19 @@ std::vector<int> language::trigramHash(){
   }
   return freq;
 }
+
+//
+double language::smilarity(std::vector A; std::vector B){
+  double numSum = 0;
+  double sumA = 0;
+  double sumB = 0;
+  for (size_t i = 0; i < (double)A.size(); i++){
+    numSum += A[i] * B[i];
+    sumA += pow(A[i], 2);
+  }
+  for (size_t i = 0; i < (double)B.size(); i++){
+    sumB += pow(B[i], 2);
+  }
+  double cosSim = numSum/(sqrt(sumA) * sqrt(sumB));
+  return cosSim;
+}

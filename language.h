@@ -20,6 +20,9 @@ public:
   //Returns the vector of occurences
   std::vector<int> trigramHash();
 
+  //Function to use the frequencies of each training language to compare the similarity to the test data language
+  double similarity(std::vector A, std::vector B);
+
 private:
   //Text variable for the inputted text
   std::string text;
