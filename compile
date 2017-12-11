@@ -13,4 +13,4 @@ rm -f *.o
 
 # compile
 
-$CPP $FLAGS -o frequencies language.cpp main.cpp
+$CPP $FLAGS -o language language.cpp main.cpp
