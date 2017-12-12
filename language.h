@@ -18,10 +18,10 @@ public:
 
   //Function that grabs the trigrams from the text and finds the hash of the trigrams to find the frequency of the hash.
   //Returns the vector of occurences
-  std::vector<long long> trigramHash();
+  std::vector<int> trigramHash();
 
   //Function to use the frequencies of each training language to compare the similarity to the test data language
-  double similarity(std::vector<double> A, std::vector<double> B);
+  double similarity(std::vector<int> A, std::vector<int> B);
 
 private:
   //Text variable for the inputted text

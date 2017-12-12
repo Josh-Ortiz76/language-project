@@ -12,25 +12,34 @@ language::language(){
 
 //Initializes the text variable as the string.
 language::language(std::string str){
-  text = str;
+  std::ifstream infile(str);
+  if(!infile.fail()){
+    std::string line;
+    while(getline(infile, line)){
+      text += line;
+    }
+    infile.close();
+  }else{
+    exit(EXIT_FAILURE);
+  }
 }
 
 //Returns the occurences of the trigrams found in the text
-std::vector<long long> language::trigramHash(){
-  std::vector<long long> hash;
+std::vector<int> language::trigramHash(){
+  std::vector<int> hash;
   std::string trigram = "";
-  std::vector<long long> freq;
+  std::vector<int> freq;
   freq.resize(19683);
-  long long hash1 = 0;
-  long long hash2 = 0;
-  long long hash3 = 0;
-  long long triHash = 0;
+  int hash1 = 0;
+  int hash2 = 0;
+  int hash3 = 0;
+  int triHash = 0;
   //Uses the base 27 to find the hash number of the trigram to compare for other hashs of the same
-  for (long long z = 0; z < 3; z++){
-    for (long long i = z; i < (long long)text.length(); i += 3){
+  for (int z = 0; z < 3; z++){
+    for (int i = z; i < (int)text.length(); i += 3){
       trigram = text.substr(i, 3);
       //Makes sure the trigram does not go out of range of the text
-      if (i < (long long)text.length() - 1 && i < (long long)text.length() - 2){
+      if (i < (int)text.length() - 1 && i < (int)text.length() - 2){
         hash1 = alpha.find(trigram[0]);
         hash2 = alpha.find(trigram[1]);
         hash3 = alpha.find(trigram[2]);
@@ -39,10 +48,10 @@ std::vector<long long> language::trigramHash(){
       }
     }
   }
-  long long count = 0;
+  int count = 0;
   //Replaces the position of the trigram with the frequency number
-  for (long long i = 0; i < (long long)hash.size(); i++){
-    for (long long j = 0; j < (long long)hash.size(); j++){
+  for (int i = 0; i < (int)hash.size(); i++){
+    for (int j = 0; j < (int)hash.size(); j++){
       if (hash[i] == hash[j]){
         count += 1;
       }
@@ -54,17 +63,15 @@ std::vector<long long> language::trigramHash(){
 }
 
 //
-double language::similarity(std::vector<double> A, std::vector<double> B){
+double language::similarity(std::vector<int> A, std::vector<int> B){
   double numSum = 0;
   double sumA = 0;
   double sumB = 0;
-  for (size_t i = 0; i < (double)A.size(); i++){
+  for (int i = 0; i < (int)A.size() - 1; i++){
     numSum += A[i] * B[i];
     sumA += pow(A[i], 2);
-  }
-  for (size_t i = 0; i < (double)B.size(); i++){
     sumB += pow(B[i], 2);
+    std::cout << i << std::endl;
   }
-  double cosSim = numSum/(sqrt(sumA) * sqrt(sumB));
-  return cosSim;
+  return(numSum/(sqrt(sumA) * sqrt(sumB)));
 }
