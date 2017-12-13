@@ -46,27 +46,36 @@ std::vector<int> language::trigramHash(){
         triHash =  (hash1 * pow(27, 2)) + (hash2 * 27) + (hash3);
         hash.push_back(triHash);
         freq.at(triHash) += 1;
-        //std::cout << trigram << " " << freq.at(triHash) << std::endl;
       }
     }
   }
   return freq;
 }
 
+//function that implements cosine similarity in order for us to check how related
+//the trigram occurences are to a given language. Rather than using "pow" for the
+//powers, we decided to just simply use multiplication since "pow()" does some default
+//casting, causing us to lose precision. We also used the "unsigned long long" declaration to
+//deal with very large values that would normally take very long with other declarations such as
+//"int". The formula is split into 3 for loops for clarity
 double language::similarity(std::vector<int> A, std::vector<int> B){
   unsigned long long numSum = 0;
   unsigned long long sumA = 0;
   unsigned long long sumB = 0;
   double cosSim = 0;
+  //Calculates the summation of the product of two vectors
   for (int i = 0; i < (int)A.size() - 1 && (int)B.size() - 1; i++){
     numSum += A[i] * B[i];
   }
+  //Calculates the square root of the summation of the first vector squared
   for (int j = 0; j < (int)A.size() - 1; j++){
-    sumA += pow(A[j], 2);
+    sumA += A[j] * A[j];
   }
+  //Calculates the square root of the summation of the second vector squared
   for (int k = 0; k < (int)B.size() - 1; k++){
-    sumB += pow(B[k], 2);
+    sumB += B[k] * B[k];
   }
+  //Final calculation of the summations to find the cosine similarity value
   cosSim = numSum/(sqrt(sumA) * sqrt(sumB));
   return cosSim;
 }
