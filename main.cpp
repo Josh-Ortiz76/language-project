@@ -6,8 +6,9 @@
 #include "language.h"
 
 int main(int argc, char* argv[]){
-  //Finds the words of the test language
+  //Creates language object for the test file language
   language lang = language(argv[argc - 1]);
+  //Finds the frequencies of the trigrams of the test file language
   std::vector<int> vtest = lang.trigramHash();
 
   //Closest language to the test language
@@ -22,6 +23,7 @@ int main(int argc, char* argv[]){
     language train = language(argv[j]);
     std::vector<int> num = train.trigramHash();
     double temp = train.similarity(num, vtest);
+    std::cout << temp << std::endl;
     if (temp > largest){
       largest = temp;
       closest = argv[j];

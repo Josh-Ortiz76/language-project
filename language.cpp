@@ -11,6 +11,7 @@ language::language(){
 }
 
 //Initializes the text variable as the string.
+//reads through each line of the text file and exits if given an invalid file name
 language::language(std::string str){
   std::ifstream infile(str);
   if(!infile.fail()){
@@ -24,7 +25,8 @@ language::language(std::string str){
 }
 }
 
-//Returns the occurences of the trigrams found in the text
+//Returns the occurences of the trigrams found in the text. Looks at and compares
+//the hash values within the vectors to determine frequency count of the trigrams in the text.
 std::vector<int> language::trigramHash(){
   std::vector<int> hash;
   std::string trigram = "";
@@ -37,7 +39,7 @@ std::vector<int> language::trigramHash(){
   //Uses the base 27 to find the hash number of the trigram to compare for other hashs of the same
   for (int z = 0; z < 3; z++){
     for (int i = z; i < (int)text.length(); i += 3){
-      //Makes sure the trigram does not go out of range of the text
+      //Makes sure the trigram does not go out of range of the text, so it does not grab invalids trigrams
       if (i < (int)text.length() - 1 && i < (int)text.length() - 2){
         trigram = text.substr(i, 3);
         hash1 = alpha.find(trigram[0]);
@@ -53,9 +55,7 @@ std::vector<int> language::trigramHash(){
 }
 
 //function that implements cosine similarity in order for us to check how related
-//the trigram occurences are to a given language. Rather than using "pow" for the
-//powers, we decided to just simply use multiplication since "pow()" does some default
-//casting, causing us to lose precision. We also used the "unsigned long long" declaration to
+//the trigram occurences are to a given language. We used the "unsigned long long" declaration to
 //deal with very large values that would normally take very long with other declarations such as
 //"int". The formula is split into 3 for loops for clarity
 double language::similarity(std::vector<int> A, std::vector<int> B){
@@ -69,11 +69,11 @@ double language::similarity(std::vector<int> A, std::vector<int> B){
   }
   //Calculates the square root of the summation of the first vector squared
   for (int j = 0; j < (int)A.size() - 1; j++){
-    sumA += A[j] * A[j];
+    sumA += pow(A[j], 2);
   }
   //Calculates the square root of the summation of the second vector squared
   for (int k = 0; k < (int)B.size() - 1; k++){
-    sumB += B[k] * B[k];
+    sumB += pow(B[k], 2);
   }
   //Final calculation of the summations to find the cosine similarity value
   cosSim = numSum/(sqrt(sumA) * sqrt(sumB));

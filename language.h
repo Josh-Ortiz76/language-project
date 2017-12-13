@@ -5,7 +5,8 @@
 #include <string>
 #include <vector>
 
-
+//Language class to find frequencies of trigrams in a given language and compares them their cosine similarity
+//value to another language to find how class the two languages are,
 class language{
 
 public:
